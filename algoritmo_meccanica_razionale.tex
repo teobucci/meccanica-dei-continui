@@ -1,46 +1,39 @@
 \documentclass{article}
+\usepackage{enumitem}
+\usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[margin=1.5in]{geometry}
 
-\title{ Algoritmo per risolvere esercizi di Meccanica Razionale}
+\title{Algoritmo per risolvere esercizi di Meccanica Razionale}
 \date{}
 \author{di Filippo Cipriani, trascritto da Teo Bucci}
-
-\usepackage[margin=1.5in]{geometry}
 
 \begin{document}
 
 \maketitle
 
-
-\textbf{Statica}
-
+\paragraph{Statica}
 
 \begin{enumerate}
-\item PSP, scomodo, con le coppie non funziona.
-\item PLV, migliore, specialmente se hai sia dinamica che statica, quindi devi fare comunque la cinematica.
+    \item PSP, scomodo, con le coppie non funziona.
+    \item PLV, migliore, specialmente se hai sia dinamica che statica, quindi devi fare comunque la cinematica.
 \end{enumerate}
 
+\paragraph{Dinamica}
 
-
-\textbf{Dinamica}
-
-
-
-In tutti gli esercizi di dinamica serve l'energia cinetica (quindi la prima parte obbligatoria è di \textit{studio cinematico} per trovare le velocità), poi, trovata l'energia cinetica dipende dal numero di coordinate libere (CL) e dalla richiesta.
-
+In tutti gli esercizi di dinamica serve l'energia cinetica (quindi la prima parte obbligatoria è di \textit{studio cinematico} per trovare le velocità), poi, trovata l'energia cinetica dipende dal numero di Coordinate Libere (CL) e dalla richiesta.
 
 \begin{enumerate}
-\item Ti chiede il moto:
-\begin{enumerate}
-\item $1$ CL: teorema dell'energia cinetica\footnote{È solo un prodotto scalare tra forza e velocità del punto d’applicazione, non tiene conto di rotazioni e le uniche forze sono forza elastica e forza peso. Le tensioni, come per il PLV, non vengono considerate.} $\dot{T} =\Pi $.
-\item $2$ CL: non scappi dalla lagrangiana\footnote{Se il potenzial dipende da $1$ CL, usi il momento cinetico, se dipende da $2$ CL, fai due lagrangiane (caso molto raro).}.
-\end{enumerate}
-
-Se hai molle avrai un moto armonico e quindi sai già che verrà l'equazione brutta, sempre della forma $\ddot{q} +\omega ^{2} q=k$.
-\item Ti chiede $\Delta $asta/qualcosa quando un'altra cosa raggiunge un certo valore: al 90\% qui devi usare il momento cinetico, calcoli $T$ e $U$, $U$ dipende da una sola coordinata (quando c'era quella richiesta non è mai capitato che $U$ dipendesse da $2$ CL), trovi il momento cinetico e integri per passare ai delta.
-\item Ti chiede $v_{f}$ o $\dot{\vartheta }_{f}$: conservazione dell'energia meccanica + lagrangiana.
-\item Ti chiede la tensione durante il moto: la trovi con la risultante sulla massa attaccata al filo, questa dipenderà sicuramente dalla derivata seconda di una coordinata libera, che dovrai trovare con il punto (1), poi equazioni cardinali.
-\item Ti chiede reazioni vincolari in un certo istante o il minimo coefficiente d'attrito per il disco: usi le equazioni cardinali, ma prima dovrai trovare il moto come nel punto (1) perché dipendono quasi sempre da quello.\footnote{C'è un caso che si ripete spesso con punto con massa $m$ che scorre su lamina senza massa attaccata a centro di un disco (e chiede una reazione vincolare agente sulla lamina): lì è sempre meglio staccare il punto, calcolare la reazione di contatto tra punto e lamina e fare il momento della lamina rispetto al punto del centro del disco.}
+    \item Ti chiede il moto:
+        \begin{enumerate}
+            \item $1$ CL: teorema dell'energia cinetica\footnote{È solo un prodotto scalare tra forza e velocità del punto d’applicazione, non tiene conto di rotazioni e le uniche forze sono forza elastica e forza peso. Le tensioni, come per il PLV, non vengono considerate.} $\dot{T} = \Pi$.
+            \item $2$ CL: non scappi dalla lagrangiana.\footnote{Se il potenzial dipende da $1$ CL, usi il momento cinetico, se dipende da $2$ CL, fai due lagrangiane (caso molto raro).}
+        \end{enumerate}
+        Se hai molle avrai un moto armonico e quindi sai già che verrà l'equazione brutta, sempre della forma $\ddot{q} + \omega ^{2} q = k$. \label{item-one}
+    \item Ti chiede $\Delta $asta/qualcosa quando un'altra cosa raggiunge un certo valore: al 90\% qui devi usare il momento cinetico, calcoli $T$ e $U$, $U$ dipende da una sola coordinata (quando c'era quella richiesta non è mai capitato che $U$ dipendesse da $2$ CL), trovi il momento cinetico e integri per passare ai delta.
+    \item Ti chiede $v_{f}$ o $\dot{\vartheta}_{f}$: conservazione dell'energia meccanica + lagrangiana.
+    \item Ti chiede la tensione durante il moto: la trovi con la risultante sulla massa attaccata al filo, questa dipenderà sicuramente dalla derivata seconda di una coordinata libera, che dovrai trovare con il punto \ref{item-one}, poi equazioni cardinali.
+    \item Ti chiede reazioni vincolari in un certo istante o il minimo coefficiente d'attrito per il disco: usi le equazioni cardinali, ma prima dovrai trovare il moto come nel punto \ref{item-one} perché dipendono quasi sempre da quello.\footnote{C'è un caso che si ripete spesso con punto con massa $m$ che scorre su lamina senza massa attaccata a centro di un disco (e chiede una reazione vincolare agente sulla lamina): lì è sempre meglio staccare il punto, calcolare la reazione di contatto tra punto e lamina e fare il momento della lamina rispetto al punto del centro del disco.}
 \end{enumerate}
 
 \end{document}
